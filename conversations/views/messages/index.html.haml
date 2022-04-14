@@ -1,0 +1,17 @@
+= turbo_stream_from "messages"
+.grid-x
+  .medium-6.cell.space
+    %h3 Send your message
+    = turbo_frame_tag "new_message" do
+      = render 'messages/form'
+    %br/
+    .content-desktop
+      %h5 Other Conversations
+      - @conversations.each do |conversation|
+        .callout
+          %h6= link_to conversation.recipient(current_user).username, conversation_messages_path(conversation)
+          - if !conversation.unread_message_count(current_user).zero?
+            (#{conversation.unread_message_count(current_user)})
+  .medium-6.cell.space
+    = turbo_frame_tag dom_id(@conversation) do
+      = render @messages

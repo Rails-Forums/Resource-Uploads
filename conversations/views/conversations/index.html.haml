@@ -1,0 +1,14 @@
+.grid-x
+  .medium-6.cell.space
+    %h3 Current Conversations for #{current_user.username}
+    - @conversations.each do |conversation|
+      .callout
+        %h6= link_to conversation.recipient(current_user).username, conversation_messages_path(conversation)
+        - if !conversation.unread_message_count(current_user).zero?
+          (#{conversation.unread_message_count(current_user)})
+  .medium-6.cell.space
+    %h3 All Users
+    - @users.each do |user|
+      .callout
+        %h6= online_status user
+        %h6= link_to "Start Conversation", conversations_path(sender_id: current_user.id, receiver_id: user.id),'data-turbo-method': :post
