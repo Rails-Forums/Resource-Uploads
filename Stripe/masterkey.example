@@ -1,0 +1,9 @@
+# Replace "pk_test" "sk_test" "pk_live" and "sk_live" with your own
+
+stripe:
+  development:
+    publishable_key: "pk_test_..."
+    secret_key: "sk_test_..."
+  production:
+    publishable_key: "pk_live_..."
+    secret_key: "sk_live_..."

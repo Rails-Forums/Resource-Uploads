@@ -1,0 +1,30 @@
+%h1 Now you need to choose your plan.
+// This shows how to get your plan to show, can use how you like and edit where needed.
+.grid-x
+  .medium-5.cell
+    .callout
+      %h4 Monthly Plan
+      %p
+        The monthly plan will charge you $2 a month. If you would like to
+        chose the monthly plan to the box under this select the $2 option and hit accpet.
+  .medium-2.cell
+  .medium-5.cell
+    .callout
+      %h4 Yearly Plan
+      %p
+        The yearly plan will charge  you $24 a year. If you would like to
+        chose the yearly plan to the box under this select the $24 option and hit accpet.
+.grid-x
+  .medium-3.cell
+  .medium-6.cell
+    = form_tag subscribe_path, method: :post do
+      %select.form-control{:name => "plan_id"}
+        - @plans.each do |plan|
+          %option{:value => plan.id}
+            $
+            = plan.amount/100
+            #{plan.nickname}
+      .grid-x
+        .medium-1.cell
+        .medium-4.cell
+          = submit_tag 'Accpet', class: "pbutton", data: { confirm: "Are you sure? All sales are final and there is no going back" }
