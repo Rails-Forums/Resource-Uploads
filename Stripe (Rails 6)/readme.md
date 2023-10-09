@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-#### Install python 2.7
+#### Install python 2.7 (If using webpacker)
 
 * [Python 2.7 Installer Page](https://www.python.org/downloads/release/python-2718/)
 * Grab the installer that works for your machine
@@ -16,6 +16,13 @@ bundle update
 #### Add stripe_id to users
 ```
 rails g migration AddStripe_idToUsers stripe_id:string
+```
+
+## Call checkout in Application layouts
+#### Add the following lines
+```
+// Stripe
+= javascript_include_tag 'https://checkout.stripe.com/checkout.js'
 ```
 
 ## Setting up the controllers
