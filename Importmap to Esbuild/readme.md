@@ -4,7 +4,7 @@
 * Need to be on Rails 7.x.x
 * Have Node installed
 * Have Yarn installed
-* Download the [.zip file](https://github.com/Rails-Forums/Resource-Uploads/raw/main/Friendly%20Id/Simple%20User%20Show%20Page.zip) for the necessary files
+* Download the [.zip file](https://github.com/Rails-Forums/Resource-Uploads/raw/main/Importmap%20to%20Esbuild/files.zip) for the necessary files
 
 ## Getting Started
 ### Add the following gems to the Gemfile
